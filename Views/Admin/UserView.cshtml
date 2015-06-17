@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "UserView";
+}
+
+@model List<FINAL_EAD_PEOJECT.Models.User_Data>
+
+<div align="center">
+    <h2>
+        <span class="label label-warning">Patient's List</span>
+    </h2>
+</div>
+
+
+<div align="right">
+    <form method="post" action="/Admin/logout">
+        @* <a href="/LogIn/Login" class="btn btn-warning">LogOut</a>*@
+        <input type="submit" class="btn btn-warning" value="LogOut" />
+    </form>
+</div>
+
+<div align="center">
+    <table cellpadding="3" border="1">
+        <tr>
+            <td><span class="label label-warning">Patient Name</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Patient Email</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Patient Phone #</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Patient Disease</span></td>
+            <td>&nbsp;</td>
+        </tr>
+
+        @if (Model != null)
+        {
+            foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.User_name</td>
+                    <td>&nbsp;</td>
+                    <td>@u.User_email</td>
+                    <td>&nbsp;</td>
+                    <td>@u.User_phone</td>
+                    <td>&nbsp;</td>
+                    <td>@u.User_disease</td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/Edit_User/@u.User_Id" class="btn btn-warning">Edit</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/removeUser/@u.User_Id" class="btn btn-warning">Remove</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>

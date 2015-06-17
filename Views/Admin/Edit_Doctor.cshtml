@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Edit_Doctor";
+}
+
+@model FINAL_EAD_PEOJECT.Models.Doctor_Data
+
+<br /><br />
+<h2>Edit Doctors Data</h2>
+@using (Html.BeginForm("After_EditDoctor", "Admin"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.Doc_name);
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.Doc_name)
+            @Html.ValidationMessageFor(Model => Model.Doc_name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.Doc_email);
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.Doc_email)
+            @Html.ValidationMessageFor(Model => Model.Doc_email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.Doc_phone);
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.Doc_phone)
+            @Html.ValidationMessageFor(Model => Model.Doc_phone)
+        </div>
+        <br /><br />
+        <div>
+            <input type="submit" value="Edit" class="btn btn-warning" />
+        </div>
+      </fieldset>
+}

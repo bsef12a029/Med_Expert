@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8bf5df985b2b491dbf54ab5edac8c73d" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="DatabaseModel.Admin" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Appionment" Width="1.5" PointX="3.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Doctor_Data" Width="1.5" PointX="2.875" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Doctor_Register" Width="1.5" PointX="5.375" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.login" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User_Data" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User_Register" Width="1.5" PointX="0.625" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK_login_Admin" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Appionment_Doctor_Data" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Appionment_User_Data" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_login_Doctor_Data" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_login_User_Data" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

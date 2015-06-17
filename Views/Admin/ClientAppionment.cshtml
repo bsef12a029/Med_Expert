@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "ClientAppionment";
+}
+@model List<FINAL_EAD_PEOJECT.Models.ClientRequest>
+
+<div align="center">
+    <h2>
+        <span class="label label-warning">List Of Appoinments</span>
+    </h2>
+</div>
+
+<div align="right">
+    <form method="post" action="/Admin/logout">
+        <input type="submit" class="btn btn-warning"  value="LogOut" />
+    </form>
+</div>
+
+    <div align="center">
+        <table cellpadding="3" border="1">
+            <tr>
+                <td><span class="label label-warning">Patient Name</span></td>
+                <td>&nbsp;</td>
+                <td><span class="label label-warning">Doctor Name</span></td>
+                <td>&nbsp;</td>
+                <td><span class="label label-warning">Appoinment Date&time</span></td>
+                <td>&nbsp;</td>
+            </tr>
+
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.pat.User_name</td>
+                    <td>&nbsp;</td>
+                    <td>@u.doc.Doc_name</td>
+                    <td>&nbsp;</td>
+                    <td>@u.app.Date_Time</td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/Edit/@u.app.User_Id" class="btn btn-warning">Edit</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/remove/@u.app.User_Id" class="btn btn-warning">Remove</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+

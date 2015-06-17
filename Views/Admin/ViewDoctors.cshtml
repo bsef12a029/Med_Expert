@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "ViewDoctors";
+}
+
+@model List<FINAL_EAD_PEOJECT.Models.Doctor_Data>
+
+<div align="center">
+    <h2>
+        <span class="label label-warning">Doctor's List</span>
+    </h2>
+</div>
+
+
+<div align="right">
+    <form method="post" action="/Admin/logout">
+        @* <a href="/LogIn/Login" class="btn btn-warning">LogOut</a>*@
+        <input type ="submit" class="btn btn-warning" value="LogOut" />
+    </form>
+</div>
+
+<div align="center">
+    <table cellpadding="3" border="1">
+        <tr>
+            <td><span class="label label-warning">Doctor Name</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Doctor Email</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Doctor Phone #</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">Doctor Category</span></td>
+            <td>&nbsp;</td>
+            <td><span class="label label-warning">No of Appionments</span></td>
+            <td>&nbsp;</td>
+        </tr>
+
+        @if(Model!=null)
+        { 
+            foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.Doc_name</td>
+                    <td>&nbsp;</td>
+                    <td>@u.Doc_email</td>
+                    <td>&nbsp;</td>
+                    <td>@u.Doc_phone</td>
+                    <td>&nbsp;</td>
+                    <td>@u.Doc_category</td>
+                    <td>&nbsp;</td>
+                    <td>@u.Doc_no_Of_Appionments</td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/Edit_Doctor/@u.Doc_Id" class="btn btn-warning">Edit</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                    <td><a href="/Admin/removeDoctor/@u.Doc_Id" class="btn btn-warning">Remove</a></td>
+                    <td>&nbsp;&nbsp;</td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+
+

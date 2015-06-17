@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Doctor_Register";
+}
+@model FINAL_EAD_PEOJECT.Models.Doctor_Register
+
+<div class="menu">
+    <ul class="nav">
+        <li><a href="/Patient/index" title="Home">Home</a></li>
+        <li><a href="/Patient/about">About</a></li>
+        <li><a href="/Patient/service">Services</a></li>
+        <li><a href="/Patient/contact">User Contact</a></li>
+        <li class="active"><a href="/Doctor_Register/Doctor_Register">Doctor Register</a></li>
+        <li><a href="/LogIn/Login">Admin</a></li>
+        <div class="clear"></div>
+    </ul>
+    <div class="social-icons">
+        <ul>
+            <li><a class="facebook" href="#" target="_blank"> </a></li>
+            <li><a class="twitter" href="#" target="_blank"></a></li>
+            <li><a class="googleplus" href="#" target="_blank"></a></li>
+            <li><a class="pinterest" href="#" target="_blank"></a></li>
+            <li><a class="dribbble" href="#" target="_blank"></a></li>
+            <li><a class="vimeo" href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div >
+  
+
+    @using (Html.BeginForm("Doctor_Register", "Doctor_Register"))
+    {
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Doctor</legend>
+            <div class="editor-field">
+                @Html.TextBoxFor(Model => Model.username, new { placeholder = "Username" })
+                @Html.ValidationMessageFor(Model => Model.username)
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.PasswordFor(Model => Model.passsword, new { placeholder = "password" })
+                @Html.ValidationMessageFor(Model => Model.passsword)
+            </div>
+            <br /><br />
+            <div>
+                <input type="submit" value="Log In" class="btn btn-warning" />
+                <a href="/Doctor/Doctor" class="alert-warning"> <input type="button" value="Register" class="btn btn-warning" /></a>
+
+            </div>
+        </fieldset>
+    }
+   
+</div>
+
+

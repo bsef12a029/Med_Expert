@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Admin_menu";
+}
+
+<div align="justify">
+    <h2>
+        <span class="label label-warning">Admin Menu</span>
+    </h2>
+</div>
+<div align="right">
+    <form method="post" action="/Admin/logout">
+       @* <a href="/LogIn/Login" class="btn btn-warning">LogOut</a>*@
+        <input type="submit" class="btn btn-warning" value="LogOut" />
+    </form>   
+</div>
+
+<div align="center">
+    <a href="/Admin/ClientAppionment" class="btn btn-warning">View Appionments</a> &nbsp;&nbsp;&nbsp;
+
+    <a href="/Admin/ViewDoctors" class="btn btn-warning">View Doctors</a><br /><br />
+
+    &nbsp;&nbsp;&nbsp;<a href="/Admin/UserView" class="btn btn-warning">View Patients</a>
+</div>

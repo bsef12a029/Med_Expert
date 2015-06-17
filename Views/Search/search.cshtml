@@ -1,0 +1,103 @@
+﻿@{Layout = null;}
+@model FINAL_EAD_PEOJECT.Models.Doctor.doctor
+
+<link href='http://fonts.googleapis.com/css?family=Ruluko' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#search").click(function () {
+            var s =$("#name").val();
+            $.ajax({
+                type: 'GET',
+                data: {
+                    Doc_name: s
+                },
+                url: '@Url.Action( "search1","Search")',
+                success: function (d) {
+                    window.alert("Success");
+                    $.each(d, function (i, data) {
+                        //$("#t1 tr").remove();
+                        $('#t1').append('<tr><td>' + data.Doc_name + '</td><td>' + data.Doc_email + '</td><td><span>' + data.Doc_phone + '</td><td>' + data.Doc_category + '</td><td>' + data.Doc_no_Of_Appionments + '</td></tr>');
+                    });
+                },
+                error: function (d) {
+                    window.alert("Error Occured Please Try Later");
+                }
+                
+            });
+        });
+    });
+</script>
+
+<div class="header">
+    <div class="logo">
+        <a href="#"><img src="~/images/logo.png"> </a>
+    </div>
+    
+    <div class="clear"></div>
+</div>
+
+<div>
+    <h2>
+        <span class="label label-warning">Search Doctors</span>
+    </h2>
+</div>
+
+<div align="right">
+        <a href="/Patient/index" class="btn btn-warning">Back</a>
+</div>
+<div>
+
+    Enter Doctor Name : <input type="text" name="Doc_name" id="name" />&nbsp;&nbsp;
+    <input type="button" value="Search" id="search" class="btn btn-warning" />
+
+</div>
+
+
+<div align="center">
+    <h2>
+        <span class="label label-warning">Search List</span>
+    </h2>
+</div>
+<br /><br />
+<div align="center">
+    <table cellpadding="3" border="1" id="t1">
+        <tr>
+            <td><span class="label label-warning">Doctor Name</span></td>
+
+            <td><span class="label label-warning">Doctor Email</span></td>
+
+            <td><span class="label label-warning">Doctor Phone #</span></td>
+
+            <td><span class="label label-warning">Doctor Category</span></td>
+
+            <td><span class="label label-warning">No of Appionments</span></td>
+
+        </tr>
+    </table>
+    
+    
+</div>
+
+<@*div align="center">
+    <table cellpadding="3" border="1" id="t1">
+
+    </table>
+</div>*@
+
+<div class="ftr-bg">
+    <div class="footer1">
+        <div class="copy">
+            <p>Design by&nbsp;Maria</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

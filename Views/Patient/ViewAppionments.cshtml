@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "ViewAppionments";
+}
+
+
+@model FINAL_EAD_PEOJECT.Models.ClientRequest
+
+<h2>
+    <span class="label label-warning">List Of Appoinments</span>
+</h2>
+
+<div align="right">
+    <form method="post" action="/Patient/logout">
+        <input type="submit" class="btn btn-warning" value="Log out" />
+    </form>
+    
+</div>
+
+<div >
+    Patient Name : @Session["name"] &nbsp;  &nbsp;  &nbsp;    Patient Email : @Session["email"]<br /><br />
+    &nbsp; &nbsp; &nbsp;  &nbsp;    Patient Phone#  : @Session["phone"]
+</div>
+<br /> <br /><br />
+<table cellpadding="5" border="1">
+    <tr>
+        <td><span class="label label-warning">Doctor Name</span></td>
+        <td> <span class="label " />&nbsp;</td>
+        <td><span class="label label-warning">Appoinment Date&time</span></td>
+        
+    </tr>
+    <tr>
+        <td><br /></td>
+    </tr>
+    @if(Model!=null)
+    {   
+         <tr>
+            <td>@Model.doc.Doc_name</td>
+             <td>&nbsp;</td>
+            <td>@Model.app.Date_Time</td>
+        </tr>    
+    }
+    
+
+</table>
+
+

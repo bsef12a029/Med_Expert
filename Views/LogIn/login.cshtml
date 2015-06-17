@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "login";
+}
+@model FINAL_EAD_PEOJECT.Models.login
+
+<div class="menu">
+    <ul class="nav">
+        <li><a href="/Patient/index" title="Home">Home</a></li>
+        <li><a href="/Patient/about">About</a></li>
+        <li><a href="/Patient/service">Services</a></li>
+        <li><a href="/Patient/contact">User Contact</a></li>
+        <li ><a href="/Doctor_Register/Doctor_Register">Doctor Register</a></li>
+        <li class="active"><a href="/LogIn/Login">Admin</a></li>
+        <div class="clear"></div>
+    </ul>
+    <div class="social-icons">
+        <ul>
+            <li><a class="facebook" href="#" target="_blank"> </a></li>
+            <li><a class="twitter" href="#" target="_blank"></a></li>
+            <li><a class="googleplus" href="#" target="_blank"></a></li>
+            <li><a class="pinterest" href="#" target="_blank"></a></li>
+            <li><a class="dribbble" href="#" target="_blank"></a></li>
+            <li><a class="vimeo" href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<h2>
+    <span class="label label-warning">Admin</span>
+</h2>
+
+@using (Html.BeginForm("login", "LogIn"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.username, new { placeholder = "username" })
+            @Html.ValidationMessageFor(Model => Model.username)
+        </div>
+        <br /><br />
+        <div class="editor-field">
+            @Html.PasswordFor(Model => Model.password, new { placeholder = "password" })
+            @Html.ValidationMessageFor(Model => Model.password)
+        </div>
+        <br /><br />
+        <div>
+            <input type="submit" value="Log In" class="btn btn-warning" />
+            <a href="/LogIn/Admin_Register" class="alert-warning"> <input type="button" value="Register" class="btn btn-warning" /></a>
+        </div>
+    </fieldset>
+}

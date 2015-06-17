@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "edit";
+}
+@model FINAL_EAD_PEOJECT.Models.ClientRequest
+
+<br /><br />
+<h2  >Edit Appionment Date & Time</h2>
+@using (Html.BeginForm("Afterediting", "Admin"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(Model => Model.app.Date_Time);
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.app.Date_Time)
+            @Html.ValidationMessageFor(Model => Model.app.Date_Time)
+        </div>
+        <br /><br />
+        <div>
+            <input type="submit" value="Edit" class="btn btn-warning" />
+        </div>
+    </fieldset>
+}
+

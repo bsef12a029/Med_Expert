@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Admin_Register";
+}
+@model FINAL_EAD_PEOJECT.Models.Admin
+
+
+@using (Html.BeginForm("Admin_Register", "LogIn"))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Admin Register</legend>
+        
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.admin_name, new { placeholder = "name" })
+            @Html.ValidationMessageFor(Model => Model.admin_name)
+        </div>
+        <br /><br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.admin_email, new { placeholder = "email" })
+            @Html.ValidationMessageFor(Model => Model.admin_email)
+        </div>
+        <br /><br />
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.admin_phone, new { placeholder = "phone #" })
+            @Html.ValidationMessageFor(Model => Model.admin_phone)
+        </div>
+        <br /><br />
+        <div>
+            <input type="submit" value="Register" class="btn btn-warning" />
+        </div>
+    </fieldset>
+}	   
